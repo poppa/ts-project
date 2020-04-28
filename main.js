@@ -13,6 +13,10 @@ const start = async () => {
     results.push(await run.yarnAdd())
   }
 
+  if (!argv['skip-package-json']) {
+    results.push(await run.packagejson())
+  }
+
   if (!argv['skip-copy-config']) {
     results.push(await copy.config())
   }
@@ -44,8 +48,6 @@ const start = async () => {
     console.log(`\n`)
     console.log(`Something wasn't correct. Check output above...\n`)
   }
-
-  console.log(`results:`, results)
 }
 
 start().catch((e) => console.error(`Main error:`, e))
