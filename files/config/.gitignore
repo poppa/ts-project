@@ -1,6 +1,5 @@
 # App
-dev
-yarn.lock
+#-- App specific stuff here
 
 # Logs
 logs
